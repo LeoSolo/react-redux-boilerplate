@@ -1,0 +1,18 @@
+@import './constants.scss';
+
+@import './containers/App.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: $mainBackground;
+  font-size: $fontSize;
+  font-family: $fontFamily;
+}
