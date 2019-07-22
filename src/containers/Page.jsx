@@ -16,7 +16,7 @@ export class Page extends React.Component {
                 <h1>My Page!</h1>
                 <Link to="/">GO BACK</Link>
             </div>
-        );
+        )
     }
 }
 
