@@ -1,11 +1,11 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import {Link, BrowserRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {bindActionCreators} from 'redux';
 
-import { setLoading } from '../actions/application';
+import {setLoading} from '../actions/application';
 
-export class App extends React.Component {
+export default class App extends React.Component {
 
     constructor(props) {
         super(props)
@@ -21,23 +21,23 @@ export class App extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        application: state.application,
-        routing: state.routing
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(
-        {
-            setLoading
-        },
-        dispatch
-    )
-}
-
-export const AppContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App)
+// function mapStateToProps(state) {
+//     return {
+//         application: state.application,
+//         routing: state.routing
+//     }
+// }
+//
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators(
+//         {
+//             setLoading
+//         },
+//         dispatch
+//     )
+// }
+//
+// export const AppContainer = connect(
+//     mapStateToProps,
+//     mapDispatchToProps
+// )(App)

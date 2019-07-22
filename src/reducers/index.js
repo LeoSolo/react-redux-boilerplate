@@ -1,8 +1,10 @@
-import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
-import { applicationReducer } from './application'
+import {combineReducers} from 'redux'
+import {connectRouter} from 'connected-react-router'
+import applicationReducer from './application'
 
-export const reducers = combineReducers({
+const rootReducer = combineReducers({
     application: applicationReducer,
-    routing: routerReducer
+    routing: connectRouter(history)
 })
+
+export default rootReducer

@@ -4,7 +4,8 @@ const initialState = {
     isLoading: false
 }
 
-export function applicationReducer(state = initialState, action) {
+export default function applicationReducer(state = initialState, action) {
+    console.log(action);
     switch (action.type) {
         case constants.APPLICATION_SET_LOADING:
             const { isLoading } = action.payload

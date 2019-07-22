@@ -1,21 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from 'react-redux';
-import ConnectedRouter from 'react-router-redux';
-import { RoutesContainer } from './containers/Routes.jsx';
-import { configureStore } from './store/configureStore';
-import { createHashHistory, createBrowserHistory } from 'history';
+import React from "react"
+import ReactDOM from "react-dom"
+import {AppContainer} from 'react-hot-loader'
+import {Provider} from 'react-redux'
+import configureStore, {history} from './store/configureStore'
 
-import './styles/base.scss';
+import App from './App'
 
-const history = process.env.NODE_ENV === 'development' ? createHashHistory() : createBrowserHistory();
-const store = configureStore(history);
+import './styles/base.scss'
+
+const store = configureStore()
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <RoutesContainer />
-        </ConnectedRouter>
-    </Provider>,
+    <AppContainer>
+        <Provider store={store}>
+            <App history={history}/>
+        </Provider>
+    </AppContainer>,
     document.getElementById("root")
 );
