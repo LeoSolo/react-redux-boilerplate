@@ -10,11 +10,21 @@ import './styles/base.scss'
 
 const store = configureStore()
 
-ReactDOM.render(
-    <AppContainer>
-        <Provider store={store}>
-            <App history={history}/>
-        </Provider>
-    </AppContainer>,
-    document.getElementById("root")
-);
+const render = () => {
+    ReactDOM.render(
+        <AppContainer>
+            <Provider store={store}>
+                <App history={history}/>
+            </Provider>
+        </AppContainer>,
+        document.getElementById("root")
+    )
+}
+
+render()
+
+if (module.hot) {
+    module.hot.accept('./App', () => {
+        render()
+    })
+}

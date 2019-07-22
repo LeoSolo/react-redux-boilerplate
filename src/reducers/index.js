@@ -2,9 +2,9 @@ import {combineReducers} from 'redux'
 import {connectRouter} from 'connected-react-router'
 import applicationReducer from './application'
 
-const rootReducer = combineReducers({
+const rootReducer = (history) => combineReducers({
     application: applicationReducer,
-    routing: connectRouter(history)
+    router: connectRouter(history)
 })
 
 export default rootReducer
